@@ -34,11 +34,12 @@ export class ServerService {
 
   getYoutube(query: String){
     return this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}`+
-    '&maxResults=50' +
+    '&maxResults=10' +
     '&type=video' +
     '&key=AIzaSyAARhzDEdAwaIYKelgTmVa8Nez5sLKjBcM' ).map(
-      (response: Response) => response.json()
+      (response: Response) => 
+        response.json(),
+      (error) => console.log('My Error:', error)
     );
   }
-  
 }

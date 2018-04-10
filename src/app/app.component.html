@@ -1,7 +1,7 @@
 <div class="container">
-  <h3 class="title">My Http Test Project</h3>
-  <p class="subtitle">Utilizing Firebase As Backend</p>
-  <div class="row">
+  <h3 class="title">My YouTube DataApi Test</h3>
+  <p class="subtitle">Search For...</p>
+  <!--<div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <input type="text" #serverName>
       <button class="btn btn-primary" (click)="onAddServer(serverName.value)">Add Server</button>
@@ -11,6 +11,22 @@
       <ul class="list-group" *ngFor="let server of servers">
         <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})</li>
       </ul>
+    </div>
+  </div>
+-->
+  <hr>
+  <br>
+
+  <div class="row">
+    <app-search-box></app-search-box>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-6 col-sm-6">
+      <app-video-list></app-video-list>
+    </div>
+    <div class="col-xs-6 col-md-6 col-sm-6">
+      app video detail
     </div>
   </div>
 </div>

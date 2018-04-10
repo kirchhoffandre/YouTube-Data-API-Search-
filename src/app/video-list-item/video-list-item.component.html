@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-4 cos-sm-4 col-md-4">
+    <a href="#" (click)="onClick()"><img src="{{video.thumbnailUrl}}" class="img-fluid"></a>
+  </div>
+  <div class="col-xs-8 cos-sm-8 col-md-8">
+    <div class="row title"><a href="#" (click)="onClick()">{{video.title}}</a></div>
+    <div class="row channel">
+      <a href="http://youtube.com/channel/{{video.channelId}}" target="_blank">
+        {{video.channelTitle}}
+      </a>
+    </div>
+    <div class="row hidden-sm-down description">
+      {{video.description}}
+    </div>
+  </div>
+</div>

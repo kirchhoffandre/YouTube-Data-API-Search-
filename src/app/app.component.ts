@@ -1,43 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { ServerService } from './server.service';
-import { Response } from '@angular/http';
+import { Component, OnInit } from "@angular/core";
+import { ServerService } from "./server.service";
+import { Response } from "@angular/http";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-    servers = [
+  servers = [
     {
-      name: 'Testserver',
+      name: "Testserver",
       capacity: 10,
       id: this.generateId()
     },
     {
-      name: 'Liveserver',
+      name: "Liveserver",
       capacity: 100,
       id: this.generateId()
     }
   ];
 
-  query: String = 'loveyourcamper';
+  query: String = "loveyourcamper";
 
-  constructor(private serverService: ServerService) {
+  constructor(private serverService: ServerService) {}
 
-  }
+  ngOnInit() {
+    this.serverService
+      .getServers()
+      .subscribe(
+        (servers: any[]) => (this.servers = servers),
+        error => console.log(error)
+      );
 
-  ngOnInit(){
-    this.serverService.getServers().subscribe(
-      (servers: any[]) => this.servers = servers,
-      (error) => console.log(error);
-    );
-
-
-    this.serverService.getYoutube(this.query).subscribe(
-      (data) => console.log(data),
-      (error) => console.log(error);
-    );
+    this.serverService
+      .getYoutube(this.query)
+      .subscribe(data => console.log(data), error => console.log(error));
   }
 
   onAddServer(name: string) {
@@ -48,18 +46,20 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onGet(){
-    this.serverService.getServers().subscribe(
-      (servers: any[]) => console.log(servers)
-    );
+  onGet() {
+    this.serverService
+      .getServers()
+      .subscribe((servers: any[]) => console.log(servers));
   }
 
-  onSaveServers(){
-    console.log('send to backend');
-    this.serverService.storeServers(this.servers).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+  onSaveServers() {
+    console.log("send to backend");
+    this.serverService
+      .storeServers(this.servers)
+      .subscribe(
+        response => console.log(response),
+        error => console.log(error)
+      );
   }
 
   private generateId() {
