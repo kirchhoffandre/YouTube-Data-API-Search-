@@ -42,4 +42,19 @@ export class ServerService {
       (error) => console.log('My Error:', error)
     );
   }
+
+
+  getChannel(){
+    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCxNHANKVvee819CSxb6UEtA` +
+    '&key=AIzaSyAARhzDEdAwaIYKelgTmVa8Nez5sLKjBcM'
+  ).map(
+    (response: Response) =>  
+      response.json(),
+      (error) => console.log('My Error:', error)
+    
+  );
+  }
+
+
+
 }

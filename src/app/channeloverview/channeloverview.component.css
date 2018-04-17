@@ -1,0 +1,164 @@
+/* This section is for
+ * ------------------------------------
+ *     Default styles
+ * ------------------------------------
+ * */
+ *:not(ul) {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  *:not(ul)::after, *:not(ul)::before {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+  }
+  
+  h5 {
+    font-size: 1.25rem;
+  }
+  
+  h6 {
+    font-size: 1rem;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: #ffc956;
+  }
+  a:hover {
+    color: #ffc956;
+  }
+  
+  ul {
+    margin: auto;
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    font-family: inherit;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: inherit;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.5;
+    background: #03120e;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (min-width: 576px) {
+    body {
+      font-size: 0.995rem;
+    }
+  }
+  @media (min-width: 768px) {
+    body {
+      font-size: 1rem;
+    }
+  }
+  /* This section is for
+   * ------------------------------------
+   *     Resuable styles
+   * ------------------------------------
+   * */
+  .btn-primary {
+    display: inline-block;
+    cursor: pointer;
+    color: #1a1d1a;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem auto;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #ffc956;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    font-weight: 700;
+    border: 2px solid transparent;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    border-color: #ffc956;
+    color: #ffc956;
+  }
+  
+  /* This section is for
+   * ------------------------------------
+   *     Profile styles
+   * ------------------------------------
+   * */
+  .main-profile {
+    background: #1a1d1a;
+    color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .main-profile .profile-background {
+    height: 8rem;
+    background: #ffc956;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .main-profile .profile-background .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0;
+  }
+  .main-profile .profile-background .social-links li a {
+    font-size: 1.2rem;
+    color: #1a1d1a;
+    margin: 0.5rem;
+  }
+  .main-profile .profile-header, .main-profile .profile-body, .main-profile .profile-footer {
+    padding: 1rem 1rem 0 1rem;
+  }
+  .main-profile .profile-header {
+    margin-top: -5rem;
+  }
+  .main-profile .profile-header img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid #ffc956;
+  }
+  .main-profile .profile-header h1 {
+    margin-bottom: .5rem;
+    line-height: 1;
+  }
+  .main-profile .profile-header .twitter-handle {
+    font-size: 1.1rem;
+  }
+  .main-profile .profile-body {
+    padding-bottom: 1rem;
+  }
+  
